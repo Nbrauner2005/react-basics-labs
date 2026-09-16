@@ -45,3 +45,8 @@ div {
   font-style: italic;
   font-size: 0.9em;
 }
+
+.priority {
+  font-style: bold;
+  font-size: 1.2em;
+}
