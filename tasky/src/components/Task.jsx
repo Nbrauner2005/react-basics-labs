@@ -16,6 +16,8 @@ const Task = (props) => {
             >
                 Done
             </button>
+
+            <button className='deleteButton' onClick={props.deleteTask}>Delete</button>
         </div>
     )
 }
