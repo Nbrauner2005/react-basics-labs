@@ -47,8 +47,10 @@ div {
 }
 
 .priority {
-  font-style: bold;
-  font-size: 1.2em;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 button {
@@ -104,4 +106,13 @@ form {
   text-align: left;
   width: 50%;
   margin: auto;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
 }
