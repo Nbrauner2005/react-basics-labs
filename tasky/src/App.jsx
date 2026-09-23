@@ -94,47 +94,51 @@ function App() {
         </Typography>
       </Container>
       {/* End App Header */}
+{/* Task Card Grid */}
+<Container maxWidth="md" component="main">
+    <Grid
+      container
+      spacing={5}
+      sx={{
+        justifyContent: "center"
+      }}
+    >
+    {taskState.tasks.map((task, index) => (
+      <Task
+        title={task.title}
+        description={task.description}
+        deadline={task.deadline}
+        done={task.done}
+        key={task.id}
+        markDone={() => doneHandler(index)}
+        deleteTask={() => deleteHandler(index)}
+      />
+    ))}
+  </Grid>
+</Container>
+{/* End Task Card Grid */}
 
-      {/* Task Card Grid */}
-      <Container maxWidth="md" component="main">
-        <Grid
-        container
-        spacing={5}
-        alignItems="flex-start"
-        justifyContent="center"
-        >
-          {taskState.tasks.map((task, index) => (
-            <Task
-            title={task.title}
-            description={task.description}
-            deadline={task.deadline}
-            done={task.done}
-            key={task.id}
-            markDone={() => doneHandler(index)}
-            deleteTask={() => deleteHandler(index)}
-            />
-          ))}
-        </Grid>
-      </Container>
-      {/* End Task Card Grid */}
     
       {/* Footer - Add Task Form */}
-      <Container
-      component="footer"
-      sx={{
-        borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-        my: 6,
-        py: 6,
-      }}  
-    >
-      <Grid container justifyContent="center">
-        <AddTaskForm
-        submit={formSubmitHandler}
-        change={formChangeHandler}
-        />
-      </Grid>
-    </Container>
-    {/* End Footer */}
+<Container
+  component="footer"
+  sx={{
+    borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+    my: 6,
+    py: 6,
+  }}
+>
+  <Grid container sx={{
+    justifyContent: "center"
+  }}>
+    <AddTaskForm
+      submit={formSubmitHandler}
+      change={formChangeHandler}
+    />
+  </Grid>
+</Container>
+{/* End Footer */}
+
     </div>
   );
 
